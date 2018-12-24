@@ -1,5 +1,16 @@
-app-signup {
-  .signup {
-    width: 300px;
+mat-card {
+  width: 33%;
+
+  mat-card-content {
+    padding: 2rem 3rem;
   }
+}
+
+mat-form-field {
+  width: 100%;
+  margin: .5rem 0;
+}
+
+.signup {
+  height: 100%;
 }

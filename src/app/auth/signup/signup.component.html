@@ -1,16 +1,39 @@
-<section class="signup">
-  <form fxLayout="column">
-    <mat-form-field>
-      <input matInput type="text" placeholder="Enter your name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="email" placeholder="Enter your email">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="password" placeholder="Enter your password">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="password" placeholder="Confirm your password">
-    </mat-form-field>
-  </form>
+<section class="signup" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Sign up</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Enter your name" ngModel name="username" required>
+          <mat-error>Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="email" placeholder="Enter your email" ngModel name="email" email required>
+          <mat-error>Email is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="{{passFieldType}}" placeholder="Enter your password" ngModel name="password" required
+                 minlength="6">
+          <mat-icon matSuffix (click)="changePasswordVisibility()"
+                    matTooltip="{{passTooltipIconText}}">{{visibilityIcon}}</mat-icon>
+          <mat-hint>Min 6 characters</mat-hint>
+          <mat-error>Password is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input [max]="maxDate" matInput placeholder="Enter your birthday" [matDatepicker]="picker" ngModel
+                 name="birthday" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker required></mat-datepicker>
+        </mat-form-field>
+        <mat-checkbox ngModel name="agree" required labelPosition="after">Agree with terms and conditions</mat-checkbox>
+      </form>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions fxLayoutAlign="end">
+      <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Sign up!</button>
+    </mat-card-actions>
+  </mat-card>
 </section>
