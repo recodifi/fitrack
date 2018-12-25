@@ -4,8 +4,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import {AuthModule} from './auth/auth.module';
 import {PublicModule} from './public/public.module';
+import {MaterialModule} from './material/material.module';
+import {DashboardModule} from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import {PublicModule} from './public/public.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AuthModule,
-    PublicModule
+    MaterialModule,
+    PublicModule,
+    DashboardModule
   ],
   exports: [],
   providers: [],
