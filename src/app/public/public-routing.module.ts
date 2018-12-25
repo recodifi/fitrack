@@ -1,11 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PublicComponent} from './public.component';
+import {AuthModule} from './auth/auth.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: PublicComponent
+    component: PublicComponent,
+    children: [
+      {path: 'auth', loadChildren: () => AuthModule}
+    ]
   }
 ];
 

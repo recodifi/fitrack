@@ -1,20 +1,27 @@
 import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'ft-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
   public isPassShown = false;
   public visibilityIcon = 'visibility';
   public passFieldType = 'password';
   public passTooltipIconText = 'Show password';
+  public maxDate: Date;
 
   constructor() {
   }
 
   ngOnInit() {
+    this.maxDate = new Date(Date.now());
+    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
+  }
+
+  onSubmit(form: NgForm) {
   }
 
   changePasswordVisibility() {
@@ -23,4 +30,5 @@ export class LoginComponent implements OnInit {
     this.passFieldType = this.isPassShown ? 'text' : 'password';
     this.passTooltipIconText = this.isPassShown ? 'Hide password' : 'Show password';
   }
+
 }
