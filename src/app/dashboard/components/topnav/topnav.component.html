@@ -1,0 +1,8 @@
+<mat-toolbar color="primary" role="heading">
+  <mat-icon (click)="onSidenavToogle($event)" role="button" fxHide.gt-xs>menu</mat-icon>
+  <ul fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <li><a routerLink="trainings">Trainings</a></li>
+    <li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/signup">Signup</a></li>
+  </ul>
+</mat-toolbar>

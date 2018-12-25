@@ -1,0 +1,9 @@
+<mat-sidenav-container>
+  <mat-sidenav role="navigation" [opened]="isSidenavOpen" (closedStart)="onSidenavClosed()">
+    <ft-sidenav></ft-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ft-topnav (toggleSidenav)="onToggleSidenav()"></ft-topnav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
