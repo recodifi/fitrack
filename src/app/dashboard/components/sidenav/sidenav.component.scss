@@ -1,0 +1,10 @@
+@import "theme";
+
+a {
+  text-decoration: none;
+  outline: none;
+
+  &.active {
+    color: mat-color($primary);
+  }
+}
